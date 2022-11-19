@@ -19,7 +19,7 @@ def main():
     #install chroem driver if not exist
     chromedriver_autoinstaller.install()
 
-    code   = input('masukan code scryping check di website = ?\n') 
+    code   = input('masukan code scryping check di website =') 
 
     print('#*********** PILIH METODE FILTER ***************#')
     print('KETIK 1 (BY KATEGORI)')
@@ -75,8 +75,11 @@ def main():
         Config.delete_create(folder)
 
     else:
-
+        print()
+        print()
+        print('#*********** KODE TIDAK DITEMUKAN CHECK LAGI DI WEB ***************#')
         print(result)
+        exit()
 
 if __name__ == "__main__":
 

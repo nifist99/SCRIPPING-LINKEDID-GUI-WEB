@@ -9,7 +9,7 @@ import pathlib
 class Config:
 
     def checkFileExist(directory):
-        timeout=360
+        timeout=1000
         file_path = os.path.normpath(directory)
         attempts = 0
         while attempts < timeout:
