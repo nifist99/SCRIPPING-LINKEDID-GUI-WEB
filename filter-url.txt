@@ -1,0 +1,32 @@
+1. url filter 6 kota by orang kategori direktur
+url asli
+https://www.linkedin.com/search/results/people/?geoUrn=%5B%22105903898%22%2C%22100572673%22%2C%22102883602%22%2C%22100280659%22%2C%22102877321%22%2C%22105539135%22%5D&keywords=direktur&origin=FACETED_SEARCH&sid=OFj
+
+pemotongan url 
+https://www.linkedin.com/search/results/people/?geoUrn=%5B%22105903898%22%2C%22100572673%22%2C%22102883602%22%2C%22100280659%22%2C%22102877321%22%2C%22105539135%22%5D&keywords=direktur&origin=FACETED_SEARCH
+
+
+2. url filter 3 kota by orang dan perusahaan
+
+url asli
+https://www.linkedin.com/search/results/people/?currentCompany=%5B%226375%22%5D&geoUrn=%5B%22100572673%22%2C%22102883602%22%2C%22105903898%22%5D&keywords=manager&origin=FACETED_SEARCH&sid=uIy
+
+pemotongan url
+
+https://www.linkedin.com/search/results/people/?currentCompany=%5B%226375%22%5D&geoUrn=%5B%22100572673%22%2C%22102883602%22%2C%22105903898%22%5D&keywords=manager&origin=FACETED_SEARCH
+
+3. url filter by orang, negara dan bidang industri
+
+url asli
+https://www.linkedin.com/search/results/people/?geoUrn=%5B%22101452733%22%2C%22105490917%22%5D&industry=%5B%2296%22%5D&keywords=manager&origin=FACETED_SEARCH&sid=v4L
+
+pemotongan url
+https://www.linkedin.com/search/results/people/?geoUrn=%5B%22101452733%22%2C%22105490917%22%5D&industry=%5B%2296%22%5D&keywords=manager&origin=FACETED_SEARCH
+
+4. url by orang, sekolah , bidang
+
+url asli 
+https://www.linkedin.com/search/results/people/?industry=%5B%2296%22%5D&keywords=manager&origin=FACETED_SEARCH&schoolFilter=%5B%224867%22%5D&sid=YL%40
+
+tidak ada pemotongan url jika di belakang FACETED_SEARCH ada filter lagi
+https://www.linkedin.com/search/results/people/?industry=%5B%2296%22%5D&keywords=manager&origin=FACETED_SEARCH&schoolFilter=%5B%224867%22%5D&sid=YL%40
