@@ -5,11 +5,8 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.chrome.options import Options
 
 import time
-import xlsxwriter
 from tkinter import *
-import requests
 import re
-import pyautogui
 import pandas as pd
 import os
 

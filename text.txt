@@ -6,3 +6,9 @@ python -m venv venv
 source venv/Scripts/activate
 venv\Scripts\activate
 pip install -r requirements.txt
+
+
+langkah menjalankan bot
+1. hidupkan xampp pp, mysql dan apache
+2. click laravel.bat
+3. jalankan linkedin.bat
