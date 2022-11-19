@@ -1,2 +1,7 @@
 https://pypi.org/project/linkedin-scraper/
 https://github.com/info3g/linkedin-scrapper/blob/master/linkedin-scrapper.py
+
+
+python -m venv venv
+source venv/Scripts/activate
+pip install -r requirements.txt

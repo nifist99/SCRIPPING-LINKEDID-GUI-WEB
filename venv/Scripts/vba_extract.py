@@ -1,4 +1,4 @@
-#!C:\python\FREELANCE\LINKEDIN\venv\Scripts\python.exe
+#!C:\python\SCRIPPING-LINKEDID-GUI-WEB\venv\Scripts\python.exe
 
 ##############################################################################
 #

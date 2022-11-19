@@ -15,15 +15,16 @@ import pandas as pd
 
 from bs4 import BeautifulSoup
 from linkedin_scraper import Person, actions
-from setting import USER,PASS
-from helper import Helper
+from module.helper import Helper
 from lxml import html
 from lxml import etree
 
-from excel import Excel
+from module.excel import Excel
 
 from os.path import exists
 
+USER = 'nikofigit99@gmail.com'
+PASS = 'Juni200610!'
 
 class Linkedin:
     def __init__(self,strt, end):
@@ -215,7 +216,7 @@ class Linkedin:
         self.getData()
         self.getProfile()
         data = self.script_profile()
-        Excel.export_pandas(data)
+        Excel.export_pandas(data,'result.xlsx')
         
         
         
