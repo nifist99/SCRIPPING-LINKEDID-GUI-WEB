@@ -170,3 +170,34 @@ class Api:
 
         except:
             return Api.result_update(key)
+
+        
+    def save(key):
+        try:
+                url = f"{base_url}/result/save"
+                payload = json.dumps({
+                    "url_profile"   : key['url_profile'],
+                    "folder"        : key['code'],
+                    "html_profile"  : key['id_profile'],
+                    "url_overlay"   : key['url_overlay'] ,
+                    "nama"          : key['nama'],
+                    "jabatan"       : key['jabatan'],
+                    "tentang"       : key['tentang'],
+                    "hp"            : key['hp'],
+                    "email"         : key['email'],
+                    "link"          : key['link'],
+                    "web"           : key['web'],
+                    "pengalaman"    : key['pengalaman']
+                })
+                headers = {
+                'Content-Type': 'application/json'
+                }
+
+                response = requests.request("POST", url, headers=headers, data=payload)
+
+                print(key['nama'])
+                print('save profile api run')
+                return response.json()
+
+        except:
+            return Api.result_update(key)       

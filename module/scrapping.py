@@ -77,33 +77,36 @@ class Scrap:
         link_check = []
         total_get  = self.max
         for no in range(self.strt,self.end):
-            soup = BeautifulSoup(open(f"{folder}\{self.code}{no}.html", encoding="utf8"), "html.parser")
-            tag_a = soup.select("a.app-aware-link",attrs={'href': re.compile("^https://")})
-            for link in tag_a:
-                href = link.get('href')
-                if link.get('href'):
-                    if "miniProfileUrn" in href:
-                        print(f"collect link profile")
-                    
-                        if href not in link_check:
-                            #script agar url tidak doubel
-                            check_href_db = Api.url_list(href)
+            check_html =Helper.exist_html(f"{folder}\{self.code}{no}.html")
 
-                            #jika ada tambah
-                            if check_href_db['code']==400:
-                                if total_get == 0:
-                                    break
+            if check_html == 'success':
+                soup = BeautifulSoup(open(f"{folder}\{self.code}{no}.html", encoding="utf8"), "html.parser")
+                tag_a = soup.select("a.app-aware-link",attrs={'href': re.compile("^https://")})
+                for link in tag_a:
+                    href = link.get('href')
+                    if link.get('href'):
+                        if "miniProfileUrn" in href:
+                            print(f"collect link profile")
+                        
+                            if href not in link_check:
+                                #script agar url tidak doubel
+                                check_href_db = Api.url_list(href)
 
-                                link_check.append(href)        
+                                #jika ada tambah
+                                if check_href_db['code']==400:
+                                    if total_get == 0:
+                                        break
 
-                                self.data.append({
-                                    "folder":f'{self.code}{no}.html',
-                                    "link"  :href,
-                                    "code"  :self.code
-                                })
+                                    link_check.append(href)        
 
-                                #mengurangi jumlah data sesui maximal di ambil
-                                total_get -=1
+                                    self.data.append({
+                                        "folder":f'{self.code}{no}.html',
+                                        "link"  :href,
+                                        "code"  :self.code
+                                    })
+
+                                    #mengurangi jumlah data sesui maximal di ambil
+                                    total_get -=1
 
                                     
 
@@ -141,37 +144,40 @@ class Scrap:
         link_check = []
         total_get  = self.max
         for no in range(self.strt,self.end):
-            soup = BeautifulSoup(open(f"{folder}\{self.code}{no}.html", encoding="utf8"), "html.parser")
-            tag_a = soup.select("a.app-aware-link",attrs={'href': re.compile("^https://")})
-            for link in tag_a:
-                href = link.get('href')
-                if link.get('href'):
-                    if "miniProfileUrn" in href:
-                        print(f"collect link profile")
-                    
-                        if href not in link_check:
-                            #script agar url tidak doubel
-                            check_href_db = Api.url_list(href)
+            check_html =Helper.exist_html(f"{folder}\{self.code}{no}.html")
 
-                            #jika ada tambah
-                            if check_href_db['code']==400:
-                                if total_get == 0:
-                                    break
+            if check_html == 'success':
+                soup = BeautifulSoup(open(f"{folder}\{self.code}{no}.html", encoding="utf8"), "html.parser")
+                tag_a = soup.select("a.app-aware-link",attrs={'href': re.compile("^https://")})
+                for link in tag_a:
+                    href = link.get('href')
+                    if link.get('href'):
+                        if "miniProfileUrn" in href:
+                            print(f"collect link profile")
+                        
+                            if href not in link_check:
+                                #script agar url tidak doubel
+                                check_href_db = Api.url_list(href)
 
-                                link_check.append(href)        
+                                #jika ada tambah
+                                if check_href_db['code']==400:
+                                    if total_get == 0:
+                                        break
 
-                                self.data.append({
-                                    "folder":f'{self.code}{no}.html',
-                                    "link"  :href,
-                                    "code"  :self.code
-                                })
+                                    link_check.append(href)        
 
-                                #mengurangi jumlah data sesui maximal di ambil
-                                total_get -=1
+                                    self.data.append({
+                                        "folder":f'{self.code}{no}.html',
+                                        "link"  :href,
+                                        "code"  :self.code
+                                    })
 
-                                    
+                                    #mengurangi jumlah data sesui maximal di ambil
+                                    total_get -=1    
 
         return self.data
+
+    
 
     def get_profile(self):
 

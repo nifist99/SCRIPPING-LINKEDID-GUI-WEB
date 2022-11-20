@@ -8,17 +8,26 @@ import pathlib
 
 class Helper:
 
-    def person(url,driver):
-        person = Person("https://www.linkedin.com/in/"+url, driver = driver)
-        return person.scrape()
+    def id_profile(url : str):
 
-    def company(url,driver):
-        company = Company("https://ca.linkedin.com/company/"+url, driver = driver)
+        split_ul = url.split('?')
+        result = split_ul[0].split('/')
 
-        return company.scrape()
+        return result[4]
+
+    def exist_html(directory):
+
+        file_path = os.path.normpath(directory)
+
+        if os.path.isfile(file_path):
+                return "success"
+
+        else:
+
+                return "failed"
 
     def checkFileExist(directory):
-        timeout=60
+        timeout=360
         file_path = os.path.normpath(directory)
         attempts = 0
         while attempts < timeout:

@@ -19,6 +19,10 @@ def main():
     #install chroem driver if not exist
     chromedriver_autoinstaller.install()
 
+    print('#*********** INI ADALAH METODE SCRIPT GET HTML ***************#')
+    
+    print("")
+
     code   = input('masukan code scryping check di website =') 
 
     print('#*********** PILIH METODE FILTER ***************#')
@@ -52,7 +56,6 @@ def main():
             print('#*********** PASTIKAN MASUKAN ANGKA DENGAN BENAR ***************#')
 
             exit()
-            
         
         for key in r:
 
