@@ -39,7 +39,7 @@ class Helper:
         while attempts < timeout:
             # Check if the file exists.
             if os.path.isfile(file_path):
-                return
+                return True
             # Wait 1 second before trying again.
             time.sleep(1)
             attempts += 1 

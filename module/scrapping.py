@@ -74,6 +74,8 @@ class Scrap:
 
             Config.save(folder,name) #FUNCTION MENYIMPAN NAMA FILE
 
+            time.sleep(10)
+
         link_check = []
         total_get  = self.max
         for no in range(self.strt,self.end):
@@ -140,6 +142,8 @@ class Scrap:
             name = f"{self.code}{no}.html" #PENAMAAN DOWNLOAD HTML
 
             Config.save(folder,name) #FUNCTION MENYIMPAN NAMA FILE
+
+            time.sleep(10)
 
         link_check = []
         total_get  = self.max
