@@ -10,7 +10,7 @@ def bot():
     print("1 by api (lebih cepat max 1000 data per hari)")
     print("2 by web (lebih lambat max unlimited)")
 
-    print
+    print()
 
     code   = int(input('masukan code scryping check di website ='))
 
