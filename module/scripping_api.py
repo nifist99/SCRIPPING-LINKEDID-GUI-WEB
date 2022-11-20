@@ -23,7 +23,7 @@ from api.api_web import Api
 from linkedin_api import Linkedin
 
 class Scrap_API:
-    def __init__(self,path,code,user,sandi,url,kategori,strt, end,max):
+    def __init__(self,path,code,user,sandi,url,kategori,strt, end,max,id):
         self.strt   = strt
         self.end    = end
         self.code   = code
@@ -33,6 +33,7 @@ class Scrap_API:
         self.kategori = kategori
         self.path   = path
         self.max    = max
+        self.id     = id
 
     def scrap_api_url(self):
         #*********** MEMBUAT FOLDER JIKA BELUM ADA ***************#
@@ -79,7 +80,6 @@ class Scrap_API:
                     href = link.get('href')
                     if link.get('href'):
                         if "miniProfileUrn" in href:
-                            print(f"collect link profile")
                         
                             if href not in link_check:
                                 #script agar url tidak doubel
@@ -100,7 +100,31 @@ class Scrap_API:
                                     # GET a profiles contact info
                                     contact_info = api.get_profile_contact_info(id_profile)
                                     # GET a profile
-                                    profile      = api.get_profile(id_profile)
+                                    profile_info      = api.get_profile(id_profile)
+
+                                    #helper
+                                    contact = Helper.api_contact(contact_info)
+                                    profile = Helper.api_profile(profile_info)
+
+                                    key = {
+                                        'email'       :contact['email'],
+                                        'phone'       :contact['phone'],
+                                        'web'         :contact['web'],
+                                        'nama'        :profile['nama'],
+                                        'tentang'     :profile['tentang'],
+                                        'jabatan'     :profile['jabatan'],
+                                        'pengalaman'  :profile['pengalaman'],
+                                        'url_profile' :href,
+                                        'folder'      :self.code,
+                                        'url_overlay' :Helper.url_overlay(href),
+                                        'html_profile':'api',
+                                        'link'        : id_profile,
+                                        'crap_id'     : self.id 
+                                    }
+
+                                    t=Api.save(key)
+
+                                    print(t)
 
                                     #mengurangi jumlah data sesui maximal di ambil
                                     total_get -=1

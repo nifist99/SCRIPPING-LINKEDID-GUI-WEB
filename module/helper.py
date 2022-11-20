@@ -14,6 +14,12 @@ class Helper:
         result = split_ul[0].split('/')
 
         return result[4]
+    
+    def url_overlay(url : str):
+
+        split_ul = url.split('?')
+
+        return split_ul[0]
 
     def exist_html(directory):
 
@@ -107,3 +113,71 @@ class Helper:
             print(error)  
 
             return False
+
+    def api_contact(key):
+
+        if key['email_address'] is  None:
+            email = 'N/A'
+        else:
+            email = key['email_address']
+
+        if len(key['phone_numbers']) ==0:
+            phone = 'N/A'
+        else:
+            phone = key['phone_numbers'][0]['number']
+
+        if len(key['websites']) == 0:
+            web = 'N/A'
+        else:
+            web = key['websites'][0]['url']
+
+        return {
+            'email':email,
+            'phone':phone,
+            'web'  : web
+        }
+
+    def api_profile(key):
+
+        pengalaman = ''
+        if len(key['experience']) != 0:
+            for ex in key['experience']:
+                try:
+                    c = ex['companyName']
+                except:
+                    c = 'N/A'
+
+                try:
+                    t = ex['companyName']
+                except:
+                    t = 'N/A'
+
+                try:
+                    p = ex['companyName']
+                except:
+                    p = 'N/A'
+
+
+                pengalaman += f"(PT{c} JABATAN {t} PERIODE {p})\n"
+
+        try:
+            tentang = key['summary']
+        except:
+            tentang = 'N/A'
+
+        try:
+            jabatan = key['headline']
+        except:
+            jabatan = 'N/A'
+
+        try:
+            nama = f"{key['firstName']} {key['lastName']}"
+        except:
+            nama = 'N/A'
+
+        return {
+            'nama'    : nama,
+            'tentang' : tentang,
+            'jabatan' : jabatan,
+            'pengalaman': pengalaman
+        }

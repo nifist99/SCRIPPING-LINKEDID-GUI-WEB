@@ -14,7 +14,7 @@ from module.excel import Excel
 
 path = pathlib.Path(__file__).parent.resolve()
 
-def main():
+def main_api():
 
     #install chroem driver if not exist
     chromedriver_autoinstaller.install()
@@ -36,7 +36,7 @@ def main():
 
     if result['status'] == 'success':
         #MENYIMPAN LIST PAGINATE
-        scrap = Scrap_API(path,result['code'],result['username'],result['sandi'],result['url'],result['kategori'],result['start'],result['end'],result['max'])
+        scrap = Scrap_API(path,result['code'],result['username'],result['sandi'],result['url'],result['kategori'],result['start'],result['end'],result['max'],result['id'])
 
         scrap.scrap_api_url()
         #delete transpool
@@ -53,4 +53,4 @@ def main():
 
 if __name__ == "__main__":
 
-    main()
+    main_api()

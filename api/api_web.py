@@ -177,17 +177,18 @@ class Api:
                 url = f"{base_url}/result/save"
                 payload = json.dumps({
                     "url_profile"   : key['url_profile'],
-                    "folder"        : key['code'],
-                    "html_profile"  : key['id_profile'],
+                    "folder"        : key['folder'],
+                    "html_profile"  : key['html_profile'],
                     "url_overlay"   : key['url_overlay'] ,
                     "nama"          : key['nama'],
                     "jabatan"       : key['jabatan'],
                     "tentang"       : key['tentang'],
-                    "hp"            : key['hp'],
+                    "hp"            : key['phone'],
                     "email"         : key['email'],
                     "link"          : key['link'],
                     "web"           : key['web'],
-                    "pengalaman"    : key['pengalaman']
+                    "pengalaman"    : key['pengalaman'],
+                    "crap_id"       : key['crap_id']
                 })
                 headers = {
                 'Content-Type': 'application/json'
