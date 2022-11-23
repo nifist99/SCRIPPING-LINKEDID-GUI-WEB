@@ -19,7 +19,7 @@ class Api:
 
             return r
         except:
-            return Api.check_result(code)
+            return Api.setting(code)
 
     def save_list(link,folder,code):
         try:

@@ -64,7 +64,7 @@ class Scrap_API:
 
             Config.save(folder,name) #FUNCTION MENYIMPAN NAMA FILE
 
-            time.sleep(10)
+            time.sleep(5)
 
         driver.close()
 

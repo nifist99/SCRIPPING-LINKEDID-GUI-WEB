@@ -9,7 +9,7 @@ import pathlib
 class Config:
 
     def checkFileExist(directory):
-        timeout=1000
+        timeout=360
         file_path = os.path.normpath(directory)
         attempts = 0
         while attempts < timeout:
@@ -37,7 +37,6 @@ class Config:
 
         check = Config.checkFileExist(direct)
         if check is True:
-            time.sleep(3)
             return True
     
     def delete_create(folder):
