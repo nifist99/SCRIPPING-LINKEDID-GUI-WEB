@@ -68,7 +68,8 @@ class Scrap_API:
 
         driver.close()
 
-        api = Linkedin(self.user, self.sandi)
+        # api = Linkedin(self.user, self.sandi)
+        api = Linkedin('harikarinjani@gmail.com', 'November101121')
 
         link_check = []
         total_get  = self.max

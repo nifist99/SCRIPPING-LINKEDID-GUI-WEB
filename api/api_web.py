@@ -93,7 +93,7 @@ class Api:
 
             return response.json()
         except:
-            return Api.check_result(url_profile)
+            return Api.url_list(url_profile)
 
     def transpool_delete():
         try:
@@ -141,7 +141,7 @@ class Api:
 
             return response.json()
         except:
-            return Api.transpool_delete()
+            return Api.transpool_all()
 
 
     def result_update(key):
@@ -201,4 +201,4 @@ class Api:
                 return response.json()
 
         except:
-            return Api.result_update(key)       
+            return Api.save(key)       

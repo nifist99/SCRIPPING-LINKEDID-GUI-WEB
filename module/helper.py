@@ -148,12 +148,12 @@ class Helper:
                     c = 'N/A'
 
                 try:
-                    t = ex['companyName']
+                    t = ex['title']
                 except:
                     t = 'N/A'
 
                 try:
-                    p = ex['companyName']
+                    p = ex['timePeriod']
                 except:
                     p = 'N/A'
 
